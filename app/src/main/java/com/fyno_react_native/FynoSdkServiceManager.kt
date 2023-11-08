@@ -46,6 +46,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         errorCallback: Callback,
     ){
         try {
+            FynoPush().showPermissionDialog()
             FynoSdk.registerPush(
                 xiaomiApplicationId,
                 xiaomiApplicationKey,
