@@ -1,6 +1,5 @@
 package com.fyno_react_native
 
-import android.util.Log
 import com.facebook.react.bridge.Callback
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -112,7 +111,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
     fun updateStatus(
         callbackURL:String,
         status:String,
-        action:JSONObject,
+        action:String,
         errorCallback: Callback,
     ){
         try {
@@ -120,7 +119,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
                 FynoSdk.updateStatus(
                     callbackURL,
                     it,
-                    action
+                    JSONObject(action)
                 )
             }
         } catch (e:Exception){
