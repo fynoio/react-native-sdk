@@ -123,10 +123,11 @@ dependencies {
     }
 
     implementation 'com.google.code.gson:gson:2.10.1'
-    implementation project(path: ':fyno-kotlin-push')
-    implementation project(path: ':fyno-kotlin-sdk')
-    implementation project(path: ':fyno-kotlin-core')
-    implementation project(path: ':fyno-kotlin-callback')
+    implementation 'io.fyno.kotlin-sdk:core:1.0.11'
+    implementation 'io.fyno.kotlin-sdk:callback:1.0.3'
+    implementation 'io.fyno.kotlin-sdk:pushlibrary:1.0.11'
+    implementation 'io.fyno.kotlin-sdk:kotlin-sdk:1.0.9'
+
     implementation 'com.google.firebase:firebase-core:21.1.1'
     implementation 'com.google.firebase:firebase-messaging:23.3.1'
 }
