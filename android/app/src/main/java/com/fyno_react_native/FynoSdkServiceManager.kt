@@ -111,15 +111,13 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
     fun updateStatus(
         callbackURL:String,
         status:String,
-        action:String,
         errorCallback: Callback,
     ){
         try {
             MessageStatus.values().find { it.name == status }?.let {
                 FynoSdk.updateStatus(
                     callbackURL,
-                    it,
-                    JSONObject(action)
+                    it
                 )
             }
         } catch (e:Exception){
