@@ -1,0 +1,278 @@
+{
+  "project_info": {
+    "project_number": "221796635414",
+    "project_id": "fyno-test",
+    "storage_bucket": "fyno-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221796635414:android:176281df9d6f1409f4b637",
+        "android_client_info": {
+          "package_name": "com.app.weatherapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221796635414-v5mu9jsddl97hf4ei43f0ebcpvn6oate.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfWBCWehfPUugllz_KNZwjKftcXsQFvIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "221796635414-v5mu9jsddl97hf4ei43f0ebcpvn6oate.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "221796635414-b4gv1jv728ioduqrkrakgdj1u61crl2b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "FYNO.chat-app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221796635414:android:671528d66c122624f4b637",
+        "android_client_info": {
+          "package_name": "com.clevertap.templateapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221796635414-v5mu9jsddl97hf4ei43f0ebcpvn6oate.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfWBCWehfPUugllz_KNZwjKftcXsQFvIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "221796635414-v5mu9jsddl97hf4ei43f0ebcpvn6oate.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "221796635414-b4gv1jv728ioduqrkrakgdj1u61crl2b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "FYNO.chat-app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221796635414:android:f656b3fc99611989f4b637",
+        "android_client_info": {
+          "package_name": "com.example.fyno_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221796635414-cmki7d4ku8odj5gfvs054m7fdepuok8k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fyno_test",
+            "certificate_hash": "d224ecddebb6e8615c9294b7c2f6564f681ffab7"
+          }
+        },
+        {
+          "client_id": "221796635414-v5mu9jsddl97hf4ei43f0ebcpvn6oate.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfWBCWehfPUugllz_KNZwjKftcXsQFvIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "221796635414-v5mu9jsddl97hf4ei43f0ebcpvn6oate.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "221796635414-b4gv1jv728ioduqrkrakgdj1u61crl2b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "FYNO.chat-app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221796635414:android:117869ccf7a4dfdbf4b637",
+        "android_client_info": {
+          "package_name": "com.fyno_react_native"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221796635414-v5mu9jsddl97hf4ei43f0ebcpvn6oate.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfWBCWehfPUugllz_KNZwjKftcXsQFvIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "221796635414-v5mu9jsddl97hf4ei43f0ebcpvn6oate.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "221796635414-b4gv1jv728ioduqrkrakgdj1u61crl2b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "FYNO.chat-app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221796635414:android:1a7453dc49772796f4b637",
+        "android_client_info": {
+          "package_name": "com.fynoapp.notification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221796635414-f999giqtapm7ricdg0smb6k0pgpvaln5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fynoapp.notification",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "221796635414-v5mu9jsddl97hf4ei43f0ebcpvn6oate.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfWBCWehfPUugllz_KNZwjKftcXsQFvIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "221796635414-v5mu9jsddl97hf4ei43f0ebcpvn6oate.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "221796635414-b4gv1jv728ioduqrkrakgdj1u61crl2b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "FYNO.chat-app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221796635414:android:971e15bc56be61e8f4b637",
+        "android_client_info": {
+          "package_name": "com.fynoreactnative"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221796635414-v5mu9jsddl97hf4ei43f0ebcpvn6oate.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfWBCWehfPUugllz_KNZwjKftcXsQFvIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "221796635414-v5mu9jsddl97hf4ei43f0ebcpvn6oate.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "221796635414-b4gv1jv728ioduqrkrakgdj1u61crl2b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "FYNO.chat-app"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221796635414:android:300cfea87f9e98b0f4b637",
+        "android_client_info": {
+          "package_name": "com.push"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221796635414-v5mu9jsddl97hf4ei43f0ebcpvn6oate.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfWBCWehfPUugllz_KNZwjKftcXsQFvIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "221796635414-v5mu9jsddl97hf4ei43f0ebcpvn6oate.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "221796635414-b4gv1jv728ioduqrkrakgdj1u61crl2b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "FYNO.chat-app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
