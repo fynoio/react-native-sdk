@@ -1,4 +1,4 @@
-package com.fyno_react_native
+package io.fyno.reactnative
 
 import com.facebook.react.bridge.Callback
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -116,6 +116,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         try {
             MessageStatus.values().find { it.name == status }?.let {
                 FynoSdk.updateStatus(
+                    this.reactApplicationContext.applicationContext,
                     callbackURL,
                     it
                 )
