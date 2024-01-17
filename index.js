@@ -1,6 +1,6 @@
 import { NativeModules } from "react-native";
 
-const { FynoSdkServiceManager } = NativeModules.FynoSdkServiceManager;
+const FynoSdkServiceManager = NativeModules.FynoSdkServiceManager;
 
 function initialise(workspaceId, token, userId, version) {
   FynoSdkServiceManager.initialise(
