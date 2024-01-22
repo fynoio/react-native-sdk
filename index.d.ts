@@ -16,6 +16,11 @@ export function registerFCM(integrationId: string): void;
 
 export function identifyUser(uniqueID: string, userName: string): void;
 
+export function mergeProfile(
+  oldDistinctId: string,
+  newDistinctId: string
+): void;
+
 export function updateStatus(callBackUrl: string, status: string): void;
 
 export function resetUser(): void;

@@ -15,7 +15,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         return "FynoSdkServiceManager";
     }
 
-    @ReactMethod
+    @ReactMethod(isBlockingSynchronousMethod = true)
     fun initialise(
         workspaceId:String,
         token:String,
@@ -36,7 +36,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         }
     }
 
-    @ReactMethod
+    @ReactMethod(isBlockingSynchronousMethod = true)
     fun registerPush(
         xiaomiApplicationId:String,
         xiaomiApplicationKey:String,
@@ -57,7 +57,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         }
     }
 
-    @ReactMethod
+    @ReactMethod(isBlockingSynchronousMethod = true)
     fun registerFCMPush(
         integrationId: String,
         errorCallback: Callback,
@@ -75,7 +75,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         }
     }
 
-    @ReactMethod
+    @ReactMethod(isBlockingSynchronousMethod = true)
     fun identify(
         uniqueId:String,
         userName:String,
@@ -91,7 +91,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         }
     }
 
-    @ReactMethod
+    @ReactMethod(isBlockingSynchronousMethod = true)
     fun mergeProfile(
         oldDistinctId:String,
         newDistinctId:String,
@@ -107,7 +107,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         }
     }
 
-    @ReactMethod
+    @ReactMethod(isBlockingSynchronousMethod = true)
     fun updateStatus(
         callbackURL:String,
         status:String,
@@ -126,7 +126,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         }
     }
 
-    @ReactMethod
+    @ReactMethod(isBlockingSynchronousMethod = true)
     fun resetUser(errorCallback: Callback){
         try{
             FynoSdk.resetUser()

@@ -2,6 +2,8 @@ import { NativeModules } from "react-native";
 
 const FynoSdkServiceManager = NativeModules.FynoSdkServiceManager;
 
+console.log("in index.js", FynoSdkServiceManager);
+
 function initialise(workspaceId, token, userId, version) {
   FynoSdkServiceManager.initialise(
     workspaceId,
@@ -43,6 +45,12 @@ function identifyUser(uniqueID, userName) {
   });
 }
 
+function mergeProfile(oldDistinctId, newDistinctId) {
+  FynoSdkServiceManager.mergeProfile(oldDistinctId, newDistinctId, (err) => {
+    console.log(err);
+  });
+}
+
 function updateStatus(callBackUrl, status) {
   FynoSdkServiceManager.updateStatus(callBackUrl, status, (err) => {
     console.log(err);
@@ -60,6 +68,7 @@ export default FynoReactNative = {
   registerPush,
   registerFCM,
   identifyUser,
+  mergeProfile,
   updateStatus,
   resetUser,
 };
@@ -69,6 +78,7 @@ module.exports = {
   registerPush,
   registerFCM,
   identifyUser,
+  mergeProfile,
   updateStatus,
   resetUser,
 };
