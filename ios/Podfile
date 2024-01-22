@@ -54,5 +54,9 @@ target 'fyno_react_native' do
       config[:reactNativePath],
       :mac_catalyst_enabled => false
     )
+    # Change __IPHONE_OS_VERSION_MIN_REQUIRED from 10 to 14 in RCT-Folly source file Time.h
+    `sed -i -e  $'s/__IPHONE_10_0/__IPHONE_14_0/' #{installer.sandbox.root}/RCT-Folly/folly/portability/Time.h`
+    # Remove typedef line in RCT-Folly source file Time.h
+    `sed -i -e  $'s/typedef uint8_t clockid_t;//' #{installer.sandbox.root}/RCT-Folly/folly/portability/Time.h`
   end
 end
