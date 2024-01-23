@@ -30,9 +30,12 @@ class FynoSdkServiceManager: NSObject {
   
   @objc
   func registerPush(
+    xiaomiApplicationId:String,
+    xiaomiApplicationKey:String,
+    pushRegion:String,
     integrationID: String,
-    isApns: Bool,
-    errorCallback: @escaping RCTResponseSenderBlock
+    errorCallback: @escaping RCTResponseSenderBlock,
+    isApns: Bool
   ) {
     fynosdk.registerPush(integrationID: integrationID, isAPNs: isApns){
       registerPushResult in

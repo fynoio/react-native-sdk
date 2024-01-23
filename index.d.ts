@@ -9,10 +9,9 @@ export function registerPush(
   xiaomiApplicationId: string,
   xiaomiApplicationKey: string,
   pushRegion: string,
-  integrationId: string
+  integrationId: string,
+  isApns: boolean = false
 ): void;
-
-export function registerFCM(integrationId: string): void;
 
 export function identifyUser(uniqueID: string, userName: string): void;
 

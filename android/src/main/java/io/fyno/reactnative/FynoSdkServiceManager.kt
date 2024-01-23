@@ -42,6 +42,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         xiaomiApplicationKey:String,
         pushRegion:String,
         integrationId:String,
+        isApns:Boolean,
         errorCallback: Callback,
     ){
         try {
@@ -53,24 +54,6 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
                 integrationId
            )
         } catch(e:Exception){
-            errorCallback(e.toString())
-        }
-    }
-
-    @ReactMethod(isBlockingSynchronousMethod = true)
-    fun registerFCMPush(
-        integrationId: String,
-        errorCallback: Callback,
-    ){
-        try{
-            FynoPush().showPermissionDialog()
-            FynoSdk.registerPush(
-                null,
-                null,
-                null,
-                integrationId
-            )
-        }  catch (e:Exception){
             errorCallback(e.toString())
         }
     }

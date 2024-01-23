@@ -20,23 +20,19 @@ function registerPush(
   xiaomiApplicationId,
   xiaomiApplicationKey,
   pushRegion,
-  integrationId
+  integrationId,
+  isApns = false
 ) {
   FynoSdkServiceManager.registerPush(
     xiaomiApplicationId,
     xiaomiApplicationKey,
     pushRegion || "INDIA",
     integrationId,
+    isApns,
     (err) => {
       console.log(err);
     }
   );
-}
-
-function registerFCM(integrationId) {
-  FynoSdkServiceManager.registerFCMPush(integrationId, (err) => {
-    console.log(err);
-  });
 }
 
 function identifyUser(uniqueID, userName) {
@@ -66,7 +62,6 @@ function resetUser() {
 export default FynoReactNative = {
   initialise,
   registerPush,
-  registerFCM,
   identifyUser,
   mergeProfile,
   updateStatus,
@@ -76,7 +71,6 @@ export default FynoReactNative = {
 module.exports = {
   initialise,
   registerPush,
-  registerFCM,
   identifyUser,
   mergeProfile,
   updateStatus,
