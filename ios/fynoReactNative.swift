@@ -3,6 +3,7 @@ import fyno_push_ios
 
 @objc(FynoSdkServiceManager)
 class FynoSdkServiceManager: NSObject {
+  
   let fynosdk = fyno.app
   
   @objc

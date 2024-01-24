@@ -25,7 +25,7 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'fyno_react_native' do
+target 'fynoReactNative' do
   config = use_native_modules!
   use_modular_headers!
 
@@ -42,7 +42,7 @@ target 'fyno_react_native' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  target 'fyno_react_nativeTests' do
+  target 'fynoReactNativeTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -54,9 +54,5 @@ target 'fyno_react_native' do
       config[:reactNativePath],
       :mac_catalyst_enabled => false
     )
-    # Change __IPHONE_OS_VERSION_MIN_REQUIRED from 10 to 14 in RCT-Folly source file Time.h
-    `sed -i -e  $'s/__IPHONE_10_0/__IPHONE_14_0/' #{installer.sandbox.root}/RCT-Folly/folly/portability/Time.h`
-    # Remove typedef line in RCT-Folly source file Time.h
-    `sed -i -e  $'s/typedef uint8_t clockid_t;//' #{installer.sandbox.root}/RCT-Folly/folly/portability/Time.h`
   end
 end
