@@ -3,19 +3,23 @@ export function initialise(
   token: string,
   userId: string,
   version: string
-): void;
+): Promise<void>;
 
 export function registerPush(
   xiaomiApplicationId: string,
   xiaomiApplicationKey: string,
   pushRegion: string,
-  integrationId: string
-): void;
+  integrationId: string,
+  provider: string
+): Promise<void>;
 
-export function registerFCM(integrationId: string): void;
+export function identifyUser(uniqueID: string, userName: string): Promise<void>;
 
-export function identifyUser(uniqueID: string, userName: string): void;
+export function mergeProfile(
+  oldDistinctId: string,
+  newDistinctId: string
+): Promise<void>;
 
-export function updateStatus(callBackUrl: string, status: string): void;
+export function updateStatus(callBackUrl: string, status: string): Promise<void>;
 
-export function resetUser(): void;
+export function resetUser(): Promise<void>;

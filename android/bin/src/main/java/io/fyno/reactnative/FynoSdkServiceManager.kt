@@ -21,6 +21,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         token:String,
         userId:String?,
         version:String,
+        errorCallback: Callback,
     ) {
         try {
             FynoSdk.initialize(
@@ -31,7 +32,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
                 version
             )
         } catch (e:Exception){
-            println(e.toString())
+            errorCallback(e.toString())
         }
     }
 
@@ -41,7 +42,8 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         xiaomiApplicationKey:String,
         pushRegion:String,
         integrationId:String,
-        provider:String,
+        isApns:Boolean,
+        errorCallback: Callback,
     ){
         try {
             FynoPush().showPermissionDialog()
@@ -52,7 +54,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
                 integrationId
            )
         } catch(e:Exception){
-            println(e.toString())
+            errorCallback(e.toString())
         }
     }
 
@@ -60,6 +62,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
     fun identify(
         uniqueId:String,
         userName:String,
+        errorCallback: Callback,
     ){
         try {
             FynoSdk.identify(
@@ -67,7 +70,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
                 userName
             )
         } catch (e:Exception){
-            println(e.toString())
+            errorCallback(e.toString())
         }
     }
 
@@ -75,6 +78,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
     fun mergeProfile(
         oldDistinctId:String,
         newDistinctId:String,
+        errorCallback: Callback,
     ){
         try {
             FynoSdk.mergeProfile(
@@ -82,7 +86,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
                 newDistinctId
             )
         } catch (e:Exception){
-            println(e.toString())
+            errorCallback(e.toString())
         }
     }
 
@@ -90,6 +94,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
     fun updateStatus(
         callbackURL:String,
         status:String,
+        errorCallback: Callback,
     ){
         try {
             MessageStatus.values().find { it.name == status }?.let {
@@ -100,16 +105,16 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
                 )
             }
         } catch (e:Exception){
-            println(e.toString())
+            errorCallback(e.toString())
         }
     }
 
     @ReactMethod(isBlockingSynchronousMethod = true)
-    fun resetUser(){
+    fun resetUser(errorCallback: Callback){
         try{
             FynoSdk.resetUser()
         } catch (e:Exception){
-            println(e.toString())
+            errorCallback(e.toString())
         }
     }
 }

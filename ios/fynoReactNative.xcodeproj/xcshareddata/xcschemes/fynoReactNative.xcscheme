@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "fyno_react_native.app"
-               BlueprintName = "fyno_react_native"
-               ReferencedContainer = "container:fyno_react_native.xcodeproj">
+               BuildableName = "fynoReactNative.app"
+               BlueprintName = "fynoReactNative"
+               ReferencedContainer = "container:fynoReactNative.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "fyno_react_nativeTests.xctest"
-               BlueprintName = "fyno_react_nativeTests"
-               ReferencedContainer = "container:fyno_react_native.xcodeproj">
+               BuildableName = "fynoReactNativeTests.xctest"
+               BlueprintName = "fynoReactNativeTests"
+               ReferencedContainer = "container:fynoReactNative.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "fyno_react_native.app"
-            BlueprintName = "fyno_react_native"
-            ReferencedContainer = "container:fyno_react_native.xcodeproj">
+            BuildableName = "fynoReactNative.app"
+            BlueprintName = "fynoReactNative"
+            ReferencedContainer = "container:fynoReactNative.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "fyno_react_native.app"
-            BlueprintName = "fyno_react_native"
-            ReferencedContainer = "container:fyno_react_native.xcodeproj">
+            BuildableName = "fynoReactNative.app"
+            BlueprintName = "fynoReactNative"
+            ReferencedContainer = "container:fynoReactNative.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
