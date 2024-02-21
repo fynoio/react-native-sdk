@@ -1,0 +1,8 @@
+rootProject.name = 'fyno_react_native'
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+include ':app'
+include ':fyno-kotlin-callback'
+include ':fyno-kotlin-core'
+include ':fyno-kotlin-push'
+include ':fyno-kotlin-sdk'
+includeBuild('../node_modules/@react-native/gradle-plugin')

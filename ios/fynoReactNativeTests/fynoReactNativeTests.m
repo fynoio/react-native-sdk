@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface fyno_react_nativeTests : XCTestCase
+@interface fynoReactNativeTests : XCTestCase
 
 @end
 
-@implementation fyno_react_nativeTests
+@implementation fynoReactNativeTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {
