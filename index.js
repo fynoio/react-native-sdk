@@ -1,19 +1,18 @@
-import { NativeModules } from "react-native";
+import {NativeModules} from 'react-native';
 
-const { FynoSdkServiceManager } = NativeModules;
+const {FynoReactNative} = NativeModules;
 
-console.log("FynoSdkServiceManager in index.js =>", FynoSdkServiceManager);
+console.log('FynoReactNative in index.js =>', FynoReactNative);
 
 function initialise(workspaceId, token, userId, version) {
-  FynoSdkServiceManager.initialise(
-    workspaceId,
-    token,
-    userId,
-    version || "live",
-    (err) => {
-      console.log(err);
+  return new Promise((resolve, reject) => {
+    try {
+      FynoReactNative.initialise(workspaceId, token, userId, version || 'live');
+      resolve();
+    } catch (err) {
+      reject(err);
     }
-  );
+  });
 }
 
 function registerPush(
@@ -21,45 +20,69 @@ function registerPush(
   xiaomiApplicationKey,
   pushRegion,
   integrationId,
-  isApns = false
+  provider,
 ) {
-  FynoSdkServiceManager.registerPush(
-    xiaomiApplicationId,
-    xiaomiApplicationKey,
-    pushRegion || "INDIA",
-    integrationId,
-    isApns,
-    (err) => {
-      console.log(err);
+  return new Promise((resolve, reject) => {
+    try {
+      FynoReactNative.registerPush(
+        xiaomiApplicationId,
+        xiaomiApplicationKey,
+        pushRegion || 'INDIA',
+        integrationId,
+        provider,
+      );
+      resolve();
+    } catch (err) {
+      reject(err);
     }
-  );
+  });
 }
 
 function identifyUser(uniqueID, userName) {
-  FynoSdkServiceManager.identify(uniqueID, userName, (err) => {
-    console.log(err);
+  return new Promise((resolve, reject) => {
+    try {
+      FynoReactNative.identify(uniqueID, userName);
+      resolve();
+    } catch (err) {
+      reject(err);
+    }
   });
 }
 
 function mergeProfile(oldDistinctId, newDistinctId) {
-  FynoSdkServiceManager.mergeProfile(oldDistinctId, newDistinctId, (err) => {
-    console.log(err);
+  return new Promise((resolve, reject) => {
+    try {
+      FynoReactNative.mergeProfile(oldDistinctId, newDistinctId);
+      resolve();
+    } catch (err) {
+      reject(err);
+    }
   });
 }
 
 function updateStatus(callBackUrl, status) {
-  FynoSdkServiceManager.updateStatus(callBackUrl, status, (err) => {
-    console.log(err);
+  return new Promise((resolve, reject) => {
+    try {
+      FynoReactNative.updateStatus(callBackUrl, status);
+      resolve();
+    } catch (err) {
+      reject(err);
+    }
   });
 }
 
 function resetUser() {
-  FynoSdkServiceManager.resetUser((err) => {
-    console.log(err);
+  return new Promise((resolve, reject) => {
+    try {
+      FynoReactNative.resetUser();
+      resolve();
+    } catch (err) {
+      reject(err);
+    }
   });
 }
 
-export default FynoReactNative = {
+export default FynoRN = {
   initialise,
   registerPush,
   identifyUser,

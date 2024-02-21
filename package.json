@@ -1,7 +1,8 @@
 {
   "name": "@fyno/react-native",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Fyno React Native SDK.",
+  "homepage": "https://github.com/fynoio/react-native-sdk",
   "author": "Fyno",
   "license": "MIT",
   "main": "dist/index.js",
@@ -13,7 +14,7 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "watch": "nodemon --watch index.js --exec 'npm run build'"
+    "watch": "nodemon --watch index.js --exec 'npm run build && cd ../ReactNativePushTest && yarn upgrade && cd ../react-native-sdk'"
   },
   "dependencies": {
     "react": "18.2.0",
