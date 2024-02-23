@@ -1,13 +1,13 @@
-import {NativeModules} from 'react-native';
+import { NativeModules } from "react-native";
 
-const {FynoReactNative} = NativeModules;
+const { FynoReactNative } = NativeModules;
 
-console.log('FynoReactNative in index.js =>', FynoReactNative);
+console.log("FynoReactNative in index.js =>", FynoReactNative);
 
 function initialise(workspaceId, token, userId, version) {
   return new Promise((resolve, reject) => {
     try {
-      FynoReactNative.initialise(workspaceId, token, userId, version || 'live');
+      FynoReactNative.initialise(workspaceId, token, userId, version || "live");
       resolve();
     } catch (err) {
       reject(err);
@@ -20,16 +20,16 @@ function registerPush(
   xiaomiApplicationKey,
   pushRegion,
   integrationId,
-  provider,
+  provider
 ) {
   return new Promise((resolve, reject) => {
     try {
       FynoReactNative.registerPush(
         xiaomiApplicationId,
         xiaomiApplicationKey,
-        pushRegion || 'INDIA',
+        pushRegion || "INDIA",
         integrationId,
-        provider,
+        provider
       );
       resolve();
     } catch (err) {
