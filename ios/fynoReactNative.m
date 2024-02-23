@@ -1,32 +1,27 @@
 #import "React/RCTBridgeModule.h"
 
-@interface RCT_EXTERN_MODULE(FynoSdkServiceManager, NSObject)
+@interface RCT_EXTERN_MODULE(FynoReactNative, NSObject)
 
 RCT_EXTERN_METHOD(initialise:(NSString *)workspaceId
                   apiKey:(NSString *)apiKey
                   distinctID:(NSString *)distinctID
-                  version:(NSString *)version
-                  errorCallback:(RCTResponseSenderBlock)callback)
+                  version:(NSString *)version)
 
 RCT_EXTERN_METHOD(registerPush:(NSString *)xiaomiApplicationId
                   xiaomiApplicationKey:(NSString *)xiaomiApplicationKey
                   pushRegion:(NSString *)pushRegion
                   integrationID:(NSString *)integrationID
-                  errorCallback:(RCTResponseSenderBlock)callback
-                  isApns:(BOOL)isApns)
+                  provider:(NSString *)provider)
 
 RCT_EXTERN_METHOD(mergeProfile:(NSString *)oldDistinctID
-                  newDistinctID:(NSString *)newDistinctID
-                  errorCallback:(RCTResponseSenderBlock)callback)
+                  newDistinctID:(NSString *)newDistinctID)
 
 RCT_EXTERN_METHOD(identifyUser:(NSString *)distinctID
-                  userName:(NSString *)userName
-                  errorCallback:(RCTResponseSenderBlock)callback)
+                  userName:(NSString *)userName)
 
 RCT_EXTERN_METHOD(updateStatus:(NSString *)callBackUrl
-                  status:(NSString *)status
-                  errorCallback:(RCTResponseSenderBlock)callback)
+                  status:(NSString *)status)
 
-RCT_EXTERN_METHOD(resetUser:(RCTResponseSenderBlock)callback)
+RCT_EXTERN_METHOD(resetUser)
 
 @end
