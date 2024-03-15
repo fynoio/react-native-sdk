@@ -7,6 +7,7 @@ import com.facebook.react.bridge.ReactMethod
 import io.fyno.callback.models.MessageStatus
 import io.fyno.kotlin_sdk.FynoSdk
 import io.fyno.pushlibrary.FynoPush
+import io.fyno.core.FynoUser
 import io.fyno.pushlibrary.models.PushRegion
 import org.json.JSONObject
 
@@ -63,6 +64,20 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
             FynoSdk.identify(
                 uniqueId,
                 userName
+            )
+        } catch (e:Exception){
+            println(e.toString())
+        }
+    }
+
+    @ReactMethod(isBlockingSynchronousMethod = true)
+    fun registerInapp(
+        inappIntegrationId:String,
+    ){
+        try {
+            FynoUser.setInapp(
+                FynoUser.getIdentity(),
+                inappIntegrationId
             )
         } catch (e:Exception){
             println(e.toString())

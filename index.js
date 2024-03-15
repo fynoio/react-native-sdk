@@ -52,6 +52,17 @@ function identifyUser(uniqueID, userName) {
   });
 }
 
+function registerInapp(integrationID) {
+  return new Promise((resolve, reject) => {
+    try {
+      FynoReactNative.registerInapp(integrationID);
+      resolve();
+    } catch (err) {
+      reject(err);
+    }
+  });
+}
+
 function mergeProfile(oldDistinctId, newDistinctId) {
   return new Promise((resolve, reject) => {
     try {
@@ -92,6 +103,7 @@ export default FynoRN = {
   mergeProfile,
   updateStatus,
   resetUser,
+  registerInapp,
 };
 
 module.exports = {
@@ -101,4 +113,5 @@ module.exports = {
   mergeProfile,
   updateStatus,
   resetUser,
+  registerInapp,
 };
