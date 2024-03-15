@@ -3,14 +3,13 @@
 @interface RCT_EXTERN_MODULE(FynoReactNative, NSObject)
 
 RCT_EXTERN_METHOD(initialise:(NSString *)workspaceId
-                  apiKey:(NSString *)apiKey
+                  integrationID:(NSString *)integrationID
                   distinctID:(NSString *)distinctID
                   version:(NSString *)version)
 
 RCT_EXTERN_METHOD(registerPush:(NSString *)xiaomiApplicationId
                   xiaomiApplicationKey:(NSString *)xiaomiApplicationKey
                   pushRegion:(NSString *)pushRegion
-                  integrationID:(NSString *)integrationID
                   provider:(NSString *)provider)
 
 RCT_EXTERN_METHOD(mergeProfile:(NSString *)oldDistinctID

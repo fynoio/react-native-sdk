@@ -36,12 +36,12 @@ To integrate the Fyno React Native Push SDK into your application, follow these 
 ## Initialising the SDK (should be called on app launch)
 
 - Workspace ID(Mandatory) - Fyno's unique workspace ID, which you will see at the top of the **Workspace Settings** page.
-- API Key(Mandatory) - An API (Application Programming Interface) key is a code used to identify and authenticate an application or user. Create an API Key by following [API Keys](https://docs.fyno.io/docs/api-keys).
+- Integration ID(Mandatory) - The ID of the integration created in [Fyno Integrations](https://app.fyno.io/integrations).
 - Distinct ID(Optional) - Unique identifier for your user (An [uuid](https://en.wikipedia.org/wiki/Universally_unique_identifier) is automatically generated if no value is passed).
 - Version(Optional) - Indicates the environment in which the user has to be created. Could be either **test** or **live**. (Default value is "live").
 
 ```javascript
-FynoReactNative.initialise(workspaceId, apiKey, userId, version);
+FynoReactNative.initialise(workspaceId, integrationID, userId, version);
 ```
 
 ## Identifying the User (should be called when you want to update previously created distinct ID or user name)
@@ -55,16 +55,14 @@ FynoReactNative.identifyUser(distinctId, userName);
 
 ## Registering Push Notifications with APNs or Google FCM
 
-- Integration ID(Mandatory) - The ID of the integration created in [Fyno Integrations](https://app.fyno.io/integrations).
 - provider(Mandatory) - Use **apns** if [APNs](https://docs.fyno.io/docs/push-apns) is configured or **fcm** if [Google FCM](https://docs.fyno.io/docs/push-fcm) is configured in the integration.
 
 ```javascript
-FynoReactNative.registerPush("", "", "", integrationID, provider);
+FynoReactNative.registerPush("", "", "", provider);
 ```
 
 ## Registering Push Notifications with Xiaomi Services (Only Android)
 
-- Integration ID(Mandatory) - The ID of the integration created in [Fyno Integrations](https://app.fyno.io/integrations)
 - Xiaomi Application Id and Xiaomi Application Key are mandatory fields which can be found under the application registered at [Xiaomi Admin](https://admin.xmpush.xiaomi.com/)
 - Push Region(Mandatory) - Refers to the geographical region where push notifications are delivered.
 - provider(Mandatory) - Use **xiaomi**.
@@ -74,7 +72,6 @@ FynoReactNative.registerPush(
   xiaomiApplicationID,
   xiaomiApplicationKey,
   pushRegion,
-  integrationID,
   provider
 );
 ```

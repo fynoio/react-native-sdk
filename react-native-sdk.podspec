@@ -10,12 +10,12 @@ Pod::Spec.new do |s|
   s.license      = package["license"]
   s.authors      = package["author"]
 
-  s.platforms    = { :ios => "13.0" }
+  s.platforms    = { :ios => "12.0" }
   s.source       = { :git => "https://github.com/fynoio/react-native-sdk.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,mm,swift}"
   s.dependency "React-Core"
-  s.dependency "fyno-push-ios", "~> 1.1.4"
+  s.dependency "fyno-push-ios"
   s.subspec 'fyno-push-ios' do |spec|
     spec.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
   end
