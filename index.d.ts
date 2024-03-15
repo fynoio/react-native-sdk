@@ -14,6 +14,8 @@ export function registerPush(
 
 export function identifyUser(uniqueID: string, userName: string): Promise<void>;
 
+export function registerInapp(integrationID: string): Promise<void>;
+
 export function mergeProfile(
   oldDistinctId: string,
   newDistinctId: string

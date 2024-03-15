@@ -72,13 +72,12 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
 
     @ReactMethod(isBlockingSynchronousMethod = true)
     fun registerInapp(
-        uniqueId:String,
         inappIntegrationId:String,
     ){
         try {
             FynoUser.setInapp(
-                uniqueId,
-                userName
+                FynoUser.getIdentity(),
+                inappIntegrationId
             )
         } catch (e:Exception){
             println(e.toString())
