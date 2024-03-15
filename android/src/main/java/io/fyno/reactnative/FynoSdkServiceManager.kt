@@ -18,7 +18,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
     @ReactMethod(isBlockingSynchronousMethod = true)
     fun initialise(
         workspaceId:String,
-        token:String,
+        integrationId:String,
         userId:String?,
         version:String,
     ) {
@@ -26,7 +26,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
             FynoSdk.initialize(
                 this.reactApplicationContext.applicationContext,
                 workspaceId,
-                token,
+                integrationId,
                 userId,
                 version
             )
@@ -40,7 +40,6 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         xiaomiApplicationId:String,
         xiaomiApplicationKey:String,
         pushRegion:String,
-        integrationId:String,
         provider:String,
     ){
         try {
@@ -49,7 +48,6 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
                 xiaomiApplicationId,
                 xiaomiApplicationKey,
                 PushRegion.values().find { it.name == pushRegion },
-                integrationId
            )
         } catch(e:Exception){
             println(e.toString())

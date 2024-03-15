@@ -9,11 +9,11 @@ class FynoReactNative: NSObject {
     @objc
     func initialise(
         _ workspaceId: String,
-        apiKey: String,
+        integrationID: String,
         distinctID: String,
         version: String
     ) {
-        fynosdk.initializeApp(workspaceID: workspaceId, apiKey: apiKey, distinctId: distinctID, version: version){
+        fynosdk.initializeApp(workspaceID: workspaceId, integrationID: integrationID, distinctId: distinctID, version: version){
             initResult in
             switch initResult {
             case .success(_):
@@ -31,11 +31,10 @@ class FynoReactNative: NSObject {
         _ xiaomiApplicationId:String,
         xiaomiApplicationKey:String,
         pushRegion:String,
-        integrationID: String,
         provider: String
     ) {
         let isAPNs = String.lowercased(provider)() == "apns" ? true : false
-        fynosdk.registerPush(integrationID: integrationID, isAPNs: isAPNs){
+        fynosdk.registerPush(isAPNs: isAPNs) {
             registerPushResult in
             switch registerPushResult {
             case .success(_):
