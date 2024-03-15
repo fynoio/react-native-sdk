@@ -11,8 +11,8 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.1'
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.21'
+        classpath 'com.android.tools.build:gradle:8.0.1'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22'
     }
 }
 
@@ -44,10 +44,10 @@ dependencies {
 
     implementation 'com.facebook.react:react-native:+'
     implementation 'com.google.code.gson:gson:2.10.1'
-    implementation 'io.fyno.kotlin-sdk:core:1.0.14'
-    implementation 'io.fyno.kotlin-sdk:callback:1.0.6'
-    implementation 'io.fyno.kotlin-sdk:pushlibrary:1.0.16'
-    implementation 'io.fyno.kotlin-sdk:kotlin-sdk:1.0.15'
+    implementation 'io.fyno.kotlin-sdk:core:2.0.0'
+    implementation 'io.fyno.kotlin-sdk:callback:2.0.0'
+    implementation 'io.fyno.kotlin-sdk:pushlibrary:2.0.0'
+    implementation 'io.fyno.kotlin-sdk:kotlin-sdk:2.0.0'
 }
 
 repositories {
@@ -55,4 +55,5 @@ repositories {
         url 'https://maven.google.com/'
         name 'Google'
     }
+    mavenCentral()
 }

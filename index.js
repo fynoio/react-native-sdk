@@ -4,10 +4,15 @@ const { FynoReactNative } = NativeModules;
 
 console.log("FynoReactNative in index.js =>", FynoReactNative);
 
-function initialise(workspaceId, token, userId, version) {
+function initialise(workspaceId, integrationID, userId, version) {
   return new Promise((resolve, reject) => {
     try {
-      FynoReactNative.initialise(workspaceId, token, userId, version || "live");
+      FynoReactNative.initialise(
+        workspaceId,
+        integrationID,
+        userId,
+        version || "live"
+      );
       resolve();
     } catch (err) {
       reject(err);
@@ -19,7 +24,6 @@ function registerPush(
   xiaomiApplicationId,
   xiaomiApplicationKey,
   pushRegion,
-  integrationId,
   provider
 ) {
   return new Promise((resolve, reject) => {
@@ -28,7 +32,6 @@ function registerPush(
         xiaomiApplicationId,
         xiaomiApplicationKey,
         pushRegion || "INDIA",
-        integrationId,
         provider
       );
       resolve();
