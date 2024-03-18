@@ -48,6 +48,23 @@ class FynoReactNative: NSObject {
     }
     
     @objc
+    func registerInapp(
+        _ integrationID: String
+        ) {
+        fynosdk.registerInapp(integrationID: integrationID){
+            registerInappResult in
+            switch registerInappResult {
+            case .success(_):
+                print("registerInapp successful")
+                return
+            case .failure(let error):
+                print(error)
+                return
+            }
+        }
+    }
+    
+    @objc
     func mergeProfile(
         _ oldDistinctID: String,
         newDistinctID: String
