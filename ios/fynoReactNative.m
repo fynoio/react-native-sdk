@@ -12,6 +12,8 @@ RCT_EXTERN_METHOD(registerPush:(NSString *)xiaomiApplicationId
                   pushRegion:(NSString *)pushRegion
                   provider:(NSString *)provider)
 
+RCT_EXTERN_METHOD(registerInapp:(NSString *)integrationID)
+
 RCT_EXTERN_METHOD(mergeProfile:(NSString *)oldDistinctID
                   newDistinctID:(NSString *)newDistinctID)
 
