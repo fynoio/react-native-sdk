@@ -1,4 +1,4 @@
-import { NativeModules } from "react-native";
+import { NativeModules, Platform } from "react-native";
 
 const { FynoReactNative } = NativeModules;
 
@@ -7,10 +7,11 @@ console.log("FynoReactNative in index.js =>", FynoReactNative);
 function initialise(workspaceId, integrationID, userId, version) {
   return new Promise((resolve, reject) => {
     try {
+      const user = Platform.OS === "android" && userId === "" ? null : userId;
       FynoReactNative.initialise(
         workspaceId,
         integrationID,
-        userId,
+        user,
         version || "live"
       );
       resolve();
