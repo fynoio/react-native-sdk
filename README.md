@@ -1,4 +1,4 @@
-# Fyno React Native Android Push SDK
+# Fyno React Native Push SDK
 
 Fyno's React Native Push Notification SDK offers a comprehensive set of notification features within your app. It's designed to efficiently deliver messages, ensuring optimal performance and user experience.
 
