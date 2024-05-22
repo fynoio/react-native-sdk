@@ -83,7 +83,7 @@ class FynoReactNative: NSObject {
     }
     
     @objc
-    func identifyUser(
+    func identify(
         _ distinctID: String,
         userName: String
     ){
