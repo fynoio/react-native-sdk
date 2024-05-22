@@ -17,7 +17,7 @@ RCT_EXTERN_METHOD(registerInapp:(NSString *)integrationID)
 RCT_EXTERN_METHOD(mergeProfile:(NSString *)oldDistinctID
                   newDistinctID:(NSString *)newDistinctID)
 
-RCT_EXTERN_METHOD(identifyUser:(NSString *)distinctID
+RCT_EXTERN_METHOD(identify:(NSString *)distinctID
                   userName:(NSString *)userName)
 
 RCT_EXTERN_METHOD(updateStatus:(NSString *)callBackUrl
