@@ -75,8 +75,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         inappIntegrationId:String,
     ){
         try {
-            FynoUser.setInapp(
-                FynoUser.getIdentity(),
+            FynoSdk.registerInapp(
                 inappIntegrationId
             )
         } catch (e:Exception){
