@@ -1,10 +1,80 @@
 import Foundation
+import React
 import fyno_push_ios
  
 @objc(FynoReactNative)
-class FynoReactNative: NSObject {
+class FynoReactNative: RCTEventEmitter {
+    private var listenerCounts: [String: Int] = [:]
+    
+    override init() {
+        super.init()
+
+        let notificationNames: [NSNotification.Name] = [
+            .init("onNotificationReceived"),
+            .init("onNotificationClicked"),
+            .init("onNotificationDismissed"),
+        ]
+
+        for name in notificationNames {
+            NotificationCenter.default.addObserver(
+                self,
+                selector: #selector(handleNotificationEvent),
+                name: name,
+                object: nil
+            )
+        }
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     let fynosdk = fyno.app
+    
+    private func emitEventWithRetry(notification: Notification, attempt: Int = 1, maxAttempts: Int = 3) {
+        DispatchQueue.main.async {
+            if self.listenerCounts[notification.name.rawValue, default: 0] > 0 {
+                // If listeners exist, send the event
+                self.sendEvent(withName: notification.name.rawValue, body: notification.object)
+            } else if attempt < maxAttempts {
+                // Retry with exponential backoff
+                let delay = pow(1.0, Double(attempt)) // Exponential backoff: 1^attempt seconds
+                print("No listeners for \(notification.name.rawValue). Retrying in \(delay) seconds (Attempt \(attempt))...")
+                DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                    self.emitEventWithRetry(notification: notification, attempt: attempt + 1, maxAttempts: maxAttempts)
+                }
+            } else {
+                // Max attempts reached, log a failure
+                print("Failed to emit \(notification.name.rawValue) after \(maxAttempts) attempts. No listeners registered.")
+            }
+        }
+    }
+
+    @objc func handleNotificationEvent(notification: Notification) {
+        emitEventWithRetry(notification: notification)
+    }
+
+    open override func supportedEvents() -> [String] {
+        return [
+            "onNotificationReceived",
+            "onNotificationClicked",
+            "onNotificationDismissed",
+        ]
+    }
+
+    override func addListener(_ eventName: String) {
+        super.addListener(eventName)
+        listenerCounts[eventName, default: 0] += 1
+        print("Added listener for \(eventName). Count: \(listenerCounts[eventName]!)")
+    }
+    
+    override func removeListeners(_ count: Double) {
+        super.removeListeners(count)
+        for eventName in supportedEvents() {
+            listenerCounts[eventName] = max((listenerCounts[eventName] ?? 0) - Int(count), 0)
+            print("Removed listener(s) from \(eventName). Count: \(listenerCounts[eventName]!)")
+        }
+    }
     
     @objc
     func initialise(
@@ -134,7 +204,7 @@ class FynoReactNative: NSObject {
     }
     
     @objc
-    static func requiresMainQueueSetup() -> Bool {
+    override static func requiresMainQueueSetup() -> Bool {
         return true
     }
 }
