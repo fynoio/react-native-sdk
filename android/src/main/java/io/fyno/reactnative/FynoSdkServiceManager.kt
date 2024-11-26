@@ -4,19 +4,14 @@ import android.content.Context.RECEIVER_EXPORTED
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Build
-import android.util.Log
-import com.facebook.react.bridge.LifecycleEventListener
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
 import com.facebook.react.modules.core.DeviceEventManagerModule
 import io.fyno.callback.models.MessageStatus
 import io.fyno.kotlin_sdk.FynoSdk
-import io.fyno.pushlibrary.FynoCallbacks
 import io.fyno.pushlibrary.FynoPush
-import io.fyno.pushlibrary.helper.NotificationHelper.rawMessage
 import io.fyno.pushlibrary.models.PushRegion
-import org.json.JSONObject
 
 class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextBaseJavaModule(reactContext) {
     override fun getName(): String {
