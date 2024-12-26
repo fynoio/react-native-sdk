@@ -169,6 +169,23 @@ class FynoReactNative: RCTEventEmitter {
             }
         }
     }
+
+    @objc
+    func updateName(
+        _ userName: String
+    ) {
+        fynosdk.updateName(userName: userName) {
+            updateNameResult in
+            switch updateNameResult {
+            case .success(_):
+                print("Update name successful")
+                return
+            case .failure(let error):
+                print(error)
+                return
+            }
+        }
+    }
     
     @objc
     func updateStatus(

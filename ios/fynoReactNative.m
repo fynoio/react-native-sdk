@@ -20,6 +20,8 @@ RCT_EXTERN_METHOD(mergeProfile:(NSString *)oldDistinctID
 RCT_EXTERN_METHOD(identify:(NSString *)distinctID
                   userName:(NSString *)userName)
 
+RCT_EXTERN_METHOD(updateName:(NSString *)userName)
+
 RCT_EXTERN_METHOD(updateStatus:(NSString *)callBackUrl
                   status:(NSString *)status)
 

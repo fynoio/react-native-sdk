@@ -78,7 +78,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         provider:String,
     ){
         try {
-            FynoPush().showPermissionDialog()
+            FynoPush().showPermissionDialog(this.reactApplicationContext.applicationContext)
             FynoSdk.registerPush(
                 xiaomiApplicationId,
                 xiaomiApplicationKey,
@@ -97,6 +97,19 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         try {
             FynoSdk.identify(
                 uniqueId,
+                userName
+            )
+        } catch (e:Exception){
+            println(e.toString())
+        }
+    }
+
+    @ReactMethod(isBlockingSynchronousMethod = true)
+    fun updateName(
+        userName:String,
+    ){
+        try {
+            FynoSdk.updateName(
                 userName
             )
         } catch (e:Exception){
