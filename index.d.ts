@@ -27,3 +27,5 @@ export function updateStatus(
 ): Promise<void>;
 
 export function resetUser(): Promise<void>;
+
+export function updateName(userName: string): Promise<void>;

@@ -97,6 +97,17 @@ function resetUser() {
   });
 }
 
+function updateName(userName) {
+  return new Promise((resolve, reject) => {
+    try {
+      FynoReactNative.updateName(userName);
+      resolve();
+    } catch (err) {
+      reject(err);
+    }
+  });
+}
+
 export default FynoRN = {
   initialise,
   registerPush,
@@ -105,6 +116,7 @@ export default FynoRN = {
   updateStatus,
   resetUser,
   registerInapp,
+  updateName,
 };
 
 module.exports = {
@@ -115,4 +127,5 @@ module.exports = {
   updateStatus,
   resetUser,
   registerInapp,
+  updateName,
 };
