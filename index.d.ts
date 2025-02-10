@@ -29,3 +29,7 @@ export function updateStatus(
 export function resetUser(): Promise<void>;
 
 export function updateName(userName: string): Promise<void>;
+
+export function isFynoNotification(remoteMessage: any): Promise<boolean>;
+
+export function handleFynoNotification(remoteMessage: any): Promise<void>;
