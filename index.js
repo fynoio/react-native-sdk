@@ -108,6 +108,35 @@ function updateName(userName) {
   });
 }
 
+function isFynoNotification(remoteMessage) {
+  return new Promise((resolve, reject) => {
+    try {
+      if (Platform.OS !== "android") {
+        throw new Error("isFynoNotification is only supported on Android");
+      }
+
+      resolve(FynoReactNative.isFynoNotification(remoteMessage));
+    } catch (err) {
+      reject(err);
+    }
+  });
+}
+
+function handleFynoNotification(remoteMessage) {
+  return new Promise((resolve, reject) => {
+    try {
+      if (Platform.OS !== "android") {
+        throw new Error("handleFynoNotification is only supported on Android");
+      }
+
+      FynoReactNative.handleFynoNotification(remoteMessage);
+      resolve();
+    } catch (err) {
+      reject(err);
+    }
+  });
+}
+
 export default FynoRN = {
   initialise,
   registerPush,
@@ -117,6 +146,8 @@ export default FynoRN = {
   resetUser,
   registerInapp,
   updateName,
+  isFynoNotification,
+  handleFynoNotification,
 };
 
 module.exports = {
@@ -128,4 +159,6 @@ module.exports = {
   resetUser,
   registerInapp,
   updateName,
+  isFynoNotification,
+  handleFynoNotification,
 };
