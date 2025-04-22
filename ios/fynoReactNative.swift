@@ -139,7 +139,7 @@ class FynoReactNative: RCTEventEmitter {
         _ oldDistinctID: String,
         newDistinctID: String
     ){
-        fynosdk.mergeProfile(newDistinctId: newDistinctID){
+        fynosdk.mergeProfile(oldDistinctId:oldDistinctID, newDistinctId: newDistinctID){
             mergeProfileResult in
             switch mergeProfileResult {
             case .success(_):
