@@ -33,3 +33,5 @@ export function updateName(userName: string): Promise<void>;
 export function isFynoNotification(remoteMessage: any): Promise<boolean>;
 
 export function handleFynoNotification(remoteMessage: any): Promise<void>;
+
+export function getNotificationToken(): Promise<string>;
