@@ -137,6 +137,17 @@ function handleFynoNotification(remoteMessage) {
   });
 }
 
+function getNotificationToken() {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const pushToken = await FynoReactNative.getNotificationToken();
+      resolve(pushToken);
+    } catch (err) {
+      reject(err);
+    }
+  });
+}
+
 export default FynoRN = {
   initialise,
   registerPush,
@@ -148,6 +159,7 @@ export default FynoRN = {
   updateName,
   isFynoNotification,
   handleFynoNotification,
+  getNotificationToken,
 };
 
 module.exports = {
@@ -161,4 +173,5 @@ module.exports = {
   updateName,
   isFynoNotification,
   handleFynoNotification,
+  getNotificationToken,
 };

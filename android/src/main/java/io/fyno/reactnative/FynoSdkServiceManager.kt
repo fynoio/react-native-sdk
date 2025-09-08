@@ -12,6 +12,7 @@ import com.facebook.react.bridge.ReactMethod
 import com.facebook.react.bridge.ReadableMap
 import com.facebook.react.modules.core.DeviceEventManagerModule
 import io.fyno.callback.models.MessageStatus
+import io.fyno.core.FynoUser
 import io.fyno.kotlin_sdk.FynoSdk
 import io.fyno.pushlibrary.FynoPush
 import io.fyno.pushlibrary.helper.NotificationHelper.renderFCMMessage
@@ -327,6 +328,22 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
             promise.resolve(null)
         } catch (e: Exception) {
             promise.reject("HANDLE_NOTIFICATION_ERROR", e)
+        }
+    }
+
+    @ReactMethod
+    fun getNotificationToken(promise: Promise) {
+        try {
+            val token = FynoUser.getFcmToken()
+            if (token == "") {
+                promise.reject("GET_PUSH_TOKEN_ERROR", Error("No push token found"))
+                return
+            }
+
+            promise.resolve(token)
+        } catch (e: Exception) {
+            Log.e("TAG", "getNotificationToken: ",e )
+            promise.reject("GET_PUSH_TOKEN_ERROR", e)
         }
     }
 }

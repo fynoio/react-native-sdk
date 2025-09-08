@@ -221,6 +221,16 @@ class FynoReactNative: RCTEventEmitter {
     }
     
     @objc
+    func getNotificationToken(_ resolve: @escaping RCTPromiseResolveBlock, rejecter reject: @escaping RCTPromiseRejectBlock) {
+        let token = fynosdk.getPushNotificationToken()
+        if token.isEmpty {
+            reject("GET_PUSH_NOTIFICATION_FAILED", "NO PUSH TOKEN FOUND", nil)
+            return
+        }
+        resolve(token)
+    }
+    
+    @objc
     override static func requiresMainQueueSetup() -> Bool {
         return true
     }

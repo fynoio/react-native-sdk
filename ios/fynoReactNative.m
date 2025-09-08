@@ -27,4 +27,7 @@ RCT_EXTERN_METHOD(updateStatus:(NSString *)callBackUrl
 
 RCT_EXTERN_METHOD(resetUser)
 
+RCT_EXTERN_METHOD(getNotificationToken:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
+
 @end
