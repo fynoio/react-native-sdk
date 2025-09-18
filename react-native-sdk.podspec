@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
   s.source_files = "ios/**/*.{h,m,mm,swift}"
   s.dependency "React-Core"
-  s.dependency "fyno-push-ios", '~> 4.0.0'
+  s.dependency "fyno-push-ios", '~> 4.0.1'
   s.subspec 'fyno-push-ios' do |spec|
     spec.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
   end
