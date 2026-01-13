@@ -1,6 +1,6 @@
 {
   "name": "@fyno/react-native",
-  "version": "4.0.3",
+  "version": "5.0.0",
   "description": "Fyno React Native SDK.",
   "homepage": "https://github.com/fynoio/react-native-sdk",
   "author": "Fyno",
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "react": "19.0.0",
-    "react-native": "0.79.0"
+    "react-native": "0.83.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
