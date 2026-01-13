@@ -45,7 +45,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
     }
 
     private fun handleInitialIntent() {
-        val activity = currentActivity ?: return
+        val activity = reactApplicationContext.currentActivity ?: return
         val intent = activity.intent
         handleNotificationIntent(intent)
     }
@@ -63,7 +63,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
             .emit(eventName, params)
     }
 
-    @ReactMethod(isBlockingSynchronousMethod = true)
+    @ReactMethod
     fun initialise(
         workspaceId:String,
         integrationId:String,
@@ -83,7 +83,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         }
     }
 
-    @ReactMethod(isBlockingSynchronousMethod = true)
+    @ReactMethod
     fun registerPush(
         xiaomiApplicationId:String,
         xiaomiApplicationKey:String,
@@ -102,7 +102,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         }
     }
 
-    @ReactMethod(isBlockingSynchronousMethod = true)
+    @ReactMethod
     fun identify(
         uniqueId:String,
         userName:String,
@@ -117,7 +117,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         }
     }
 
-    @ReactMethod(isBlockingSynchronousMethod = true)
+    @ReactMethod
     fun updateName(
         userName:String,
     ){
@@ -130,7 +130,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         }
     }
 
-    @ReactMethod(isBlockingSynchronousMethod = true)
+    @ReactMethod
     fun registerInapp(
         inappIntegrationId:String,
     ){
@@ -143,7 +143,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         }
     }
 
-    @ReactMethod(isBlockingSynchronousMethod = true)
+    @ReactMethod
     fun mergeProfile(
         oldDistinctId:String,
         newDistinctId:String,
@@ -158,7 +158,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         }
     }
 
-    @ReactMethod(isBlockingSynchronousMethod = true)
+    @ReactMethod
     fun updateStatus(
         callbackURL:String,
         status:String,
@@ -176,7 +176,7 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         }
     }
 
-    @ReactMethod(isBlockingSynchronousMethod = true)
+    @ReactMethod
     fun resetUser(){
         try{
             FynoSdk.resetUser()
@@ -185,13 +185,14 @@ class FynoSdkServiceManager(reactContext: ReactApplicationContext):ReactContextB
         }
     }
 
-    @ReactMethod(isBlockingSynchronousMethod = true)
-    fun isFynoNotification(messageData: ReadableMap): Boolean {
-        return try {
+    @ReactMethod
+    fun isFynoNotification(messageData: ReadableMap, promise: Promise) {
+        try {
             val message = messageData.getMap("data")
-            message?.hasKey("fyno_push") == true
+            val isFyno = message?.hasKey("fyno_push") == true
+            promise.resolve(isFyno)
         } catch (e: Exception) {
-            false
+            promise.resolve(false)
         }
     }
 

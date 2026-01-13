@@ -1,4 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="io.fyno.reactnative">
     <application>
+        <receiver android:name="io.fyno.reactnative.NotificationCallbacks" android:exported="true">
+            <intent-filter>
+                <action android:name="io.fyno.pushlibrary.NOTIFICATION_ACTION" />
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>
